@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<title>โรงเรียนมารีวิทยา ปราจีนบุรี</title>
+
+<!-- Place the following CSS in your <head> or stylesheet -->
+<style>
+/* This is an optional body style to provide a background for the page */
+body {
+    background-color: #f3f4f6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Optional: a container to center the card on the page for demonstration */
+.demo-container-checkin {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* === User Check-in Card Styles === */
+.checkin-card {
+    --checkin-radius: 12px;
+    --checkin-shadow: 0 4px 10px rgba(0,0,0,0.06);
+
+    background-color: #ffffff;
+    border-radius: var(--checkin-radius);
+    box-shadow: var(--checkin-shadow);
+    max-width: 450px;
+    width: 100%;
+    overflow: hidden; /* Added to ensure content respects the border-radius */
+}
+
+.checkin-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem;
+}
+
+.checkin-card-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.checkin-card-user-info {
+    line-height: 1.4;
+}
+.checkin-card-user-info strong {
+    font-weight: 600;
+}
+.checkin-card-user-name {
+    margin: 0;
+    color: #111827;
+}
+.checkin-card-time {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Map/Photo Image */
+.checkin-card-map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Location details block */
+.checkin-card-location-block {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #f3f4f6;
+    background-color: #f9fafb;
+    align-items: center;
+}
+
+.checkin-card-icon-wrapper {
+    flex-shrink: 0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: #e5e7eb;
+}
+.checkin-card-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    color: #4b5563;
+    display: block;
+}
+
+.checkin-card-location-info {
+    line-height: 1.4;
+}
+.checkin-card-location-name {
+    font-weight: 600;
+    margin: 0;
+}
+.checkin-card-location-city {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+</style>
+
+<!-- Place the following HTML in your <body> -->
+<div class="demo-container-checkin">
+    <article class="checkin-card">
+        <header class="checkin-card-header">
+            <img src="https://www.facebook.com/photo/?fbid=529585975626015&set=a.529585938959352&locale=th_TH" alt="Avatar of Lena Ray" class="checkin-card-avatar">
+            <div class="checkin-card-user-info">
+                <p class="checkin-card-user-name"><strong>Lena Ray</strong> is at&nbsp;<strong>Fushimi Inari Shrine</strong></p>
+                <time datetime="2025-09-20T11:00" class="checkin-card-time">1 hour ago</time>
+            </div>
+        </header>
+
+        <!-- The map preview image for the location is optional -->
+        <a href="#">
+            <img class="checkin-card-map-image" src="https://share.google/f5COYHebYJpgn0YGO" alt="Map showing the Fushimi Inari Shrine location">
+        </a>
+
+        <div class="checkin-card-location-block">
+            <div class="checkin-card-icon-wrapper">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.965 2.093a1 1 0 01.07 0c3.23.284 5.922 3.012 5.922 6.264 0 3.639-2.924 7.647-5.513 10.975a1 1 0 01-1.488 0C6.353 15.998 3.5 12.012 3.5 8.357c0-3.252 2.692-5.98 5.922-6.264a1 1 0 01.543 0zM10 11a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/></svg>
+            </div>
+            <address class="checkin-card-location-info">
+                <p class="checkin-card-location-name">Fushimi Inari Shrine</p>
+                <p class="checkin-card-location-city">Kyoto, Japan</p>
+            </address>
+        </div>
+    </article>
+</div>
