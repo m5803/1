@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+        <html lang="th">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>แบบทดสอบออนไลน์ภาษาอังกฤษ</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+          body {
+            margin: 0;
+            font-family: "Prompt", sans-serif;
+          }
+          iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+          }
+          #overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            color: #ff4d4d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-align: center;
+            z-index: 9999;
+            display: none;
+          }
+          #timer {
+            margin-top: 20px;
+            font-size: 3rem;
+            color: #fff200;
+          }
+        </style>
+        </head>
+        <body>
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetsGAgb0xM8GuM_BqC_hoD0VAGyTJPoa-nVB1aGe8753tFrw/viewform?usp=header"></iframe>
+
+        <div id="overlay">
+          🚨 Detect Virus on your Computer! 🚨 <br>
+          Please Wait until the Program devast the Virus
+          <div id="timer">30</div>
+        </div>
+            <body>
+
+                <p class="blinking-text">
+                 ❗ ATTENTION: This Text is Blinking ❗
+                </p>
+
+            </body>
+        <script>   
+        let lock = false;
+        let countdown;
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden && !lock) {
+            showOverlay();
+          }
+        });
+
+        function showOverlay() {
+          lock = true;
+          const overlay = document.getElementById("overlay");
+          const timer = document.getElementById("timer");
+          let timeLeft = 30; // 30 second
+
+          overlay.style.display = "flex";
+          timer.textContent = timeLeft;
+
+          countdown = setInterval(() => {
+            timeLeft--;
+            timer.textContent = timeLeft;
+            if (timeLeft <= 0) {
+              clearInterval(countdown);
+              overlay.style.display = "none";
+              lock = false;
+            }
+          }, 1000);
+        }
+        </script>
+
+        </body>
+        </html>
